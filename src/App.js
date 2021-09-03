@@ -27,7 +27,7 @@ function App() {
             <WodForm />
           </Route>
           <Route exact path="/wod/:id">
-            <Wod wods={wods}/>
+            <Wod wods={wods} />
           </Route>
         </Switch>
       </Router>
