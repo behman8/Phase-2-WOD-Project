@@ -1,10 +1,22 @@
 import React from 'react';
+import { useParams, Redirect } from 'react-router-dom'
 
-function Wod() {
+function Wod( { wods } ) {
+    const params = useParams();
+    const foundWorkout = wods.find(wod => wod.id === parseInt(params.id))
 
-    return(
-        <p>Wod</p>
-    )
+    if (foundWorkout) {
+        return(
+            <>
+                <p>{foundWorkout.workout}</p>
+                <h3>{foundWorkout.score}</h3>
+                <input type='text'></input>
+                <h2>Likes: {foundWorkout.likes}</h2>
+            </>
+        )
+    } else {
+        return <Redirect to='/'/> 
+    }
 };
 
 export default Wod;

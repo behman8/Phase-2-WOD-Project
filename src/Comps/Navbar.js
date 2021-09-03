@@ -5,11 +5,7 @@ function Navbar() {
 
     return (
         <nav>
-
-            <Link to="/">Home</Link>
-            <br/>
-            <Link to="/wod/new">Creat WOD</Link>
-
+            <Link to="/">Home</Link> | <Link to="/wod/new">Create WOD</Link>
         </nav>
     )
 
