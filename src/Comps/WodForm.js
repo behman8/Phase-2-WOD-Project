@@ -1,25 +1,26 @@
 import React, { useState } from 'react';
 
-function WodForm() {
+function WodForm( { submitWod } ) {
     const [formData, setFormData] = useState({
         workout: "",
         score: "",
         likes: 0,
     });
 
-    function handleChange(event) {
-        setFormData({...formData, [event.target.id]: event.target.value,});
-    };
-
-    function handleSubmit(event) {
-        event.preventDefault();
+    function handleSubmit() {
         fetch("http://localhost:3000/wods", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
             },
-            body: JSON.stringify(formData),
-        });
+            body: JSON.stringify(formData)
+        })
+            .then(resp => resp.json())
+            .then(data => submitWod(...data, [formData]))
+    };
+
+    function handleChange(event) {
+        setFormData({...formData, [event.target.id] : event.target.value,});
     };
 
     return(
@@ -41,7 +42,7 @@ function WodForm() {
                 value={formData.score}
                 onChange={handleChange}
             />
-            <button id="submit-button" type="submit" onClick>Submit WOD</button>
+            <button id="submit-button" type="submit">Submit WOD</button>
         </form>
     )
 };

@@ -15,6 +15,10 @@ function App() {
       .then(data => setWods(data))
   }, []);
 
+  function submitWod(newWod) {
+    setWods(newWod);
+  };
+
   return (
     <div className="App">
       <Router>
@@ -24,7 +28,7 @@ function App() {
             <Home wods={wods}/>
           </Route>
           <Route exact path="/wod/new">
-            <WodForm />
+            <WodForm submitWod={submitWod}/>
           </Route>
           <Route exact path="/wod/:id">
             <Wod wods={wods} />
