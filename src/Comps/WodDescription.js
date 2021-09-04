@@ -2,11 +2,11 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 function WodDescription( { wod } ) {
-    const history = useHistory()
+    const history = useHistory();
 
     function handleClick() {
         history.push(`/wod/${wod.id}`)
-    }
+    };
 
     return(
         <>

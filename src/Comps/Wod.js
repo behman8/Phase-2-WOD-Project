@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Redirect } from 'react-router-dom'
 
-function Wod( { wods} ) {
+function Wod( { wods } ) {
     const params = useParams();
     const foundWorkout = wods.find(wod => wod.id === parseInt(params.id))
 

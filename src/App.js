@@ -16,7 +16,15 @@ function App() {
   }, []);
 
   function submitWod(newWod) {
-    setWods(newWod);
+        fetch("http://localhost:3000/wods", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json", "Accepts": "application/json"
+            },
+            body: JSON.stringify(newWod)
+        })
+            .then(resp => resp.json())
+            .then(data => setWods([...wods, data]))
   };
 
   return (

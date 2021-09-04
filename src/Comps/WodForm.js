@@ -7,28 +7,20 @@ function WodForm( { submitWod } ) {
         likes: 0,
     });
 
-    function handleSubmit() {
-        fetch("http://localhost:3000/wods", {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json",
-            },
-            body: JSON.stringify(formData)
-        })
-            .then(resp => resp.json())
-            .then(data => submitWod(...data, [formData]))
-    };
-
     function handleChange(event) {
         setFormData({...formData, [event.target.id] : event.target.value,});
+    };
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        submitWod(formData);
     };
 
     return(
         <form onSubmit={handleSubmit}>
             <h1>Create Your WOD!</h1>
             <textarea 
-                id="workout" 
-                type="text" 
+                id="workout"
                 placeholder="Enter workout here..."
                 value={formData.workout}
                 onChange={handleChange}

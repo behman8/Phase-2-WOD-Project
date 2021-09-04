@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
 
     return (
         <nav>
-            <Link to="/">Home</Link> | <Link to="/wod/new">Create WOD</Link>
+            <NavLink exact to="/" activeStyle={{color: "red"}}>Home</NavLink> | <NavLink to="/wod/new" activeStyle={{color: "red"}}>Create WOD</NavLink>
         </nav>
     )
 
