@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 function WodForm( { submitWod } ) {
     const [formData, setFormData] = useState({
         workout: "",
-        score: "",
+        scoring: "",
         likes: 0,
+        score: 0,
     });
 
     function handleChange(event) {
@@ -26,12 +27,12 @@ function WodForm( { submitWod } ) {
                 onChange={handleChange}
             />
             <br/>
-            <h3>Score</h3>
+            <h3>Scoring</h3>
             <input 
-                id="score"
+                id="scoring"
                 type="text"
                 placeholder="How will this be scored?"
-                value={formData.score}
+                value={formData.scoring}
                 onChange={handleChange}
             />
             <button id="submit-button" type="submit">Submit WOD</button>

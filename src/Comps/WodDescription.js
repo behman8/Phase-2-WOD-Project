@@ -11,8 +11,8 @@ function WodDescription( { wod } ) {
     return(
         <>
             <p>{wod.workout}</p>
-            <h3>{wod.score}</h3>
-            <h2>Likes: {wod.likes}</h2>
+            <h2>Score: {wod.score}</h2>
+            <h3>Likes: {wod.likes}</h3>
 
             <button onClick={handleClick}>Add score and leave a like!</button>
         </>

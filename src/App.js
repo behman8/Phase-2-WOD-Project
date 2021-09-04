@@ -32,14 +32,14 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/">
-            <Home wods={wods}/>
-          </Route>
           <Route exact path="/wod/new">
             <WodForm submitWod={submitWod}/>
           </Route>
           <Route exact path="/wod/:id">
             <Wod wods={wods} />
+          </Route>
+          <Route exact path="/">
+            <Home wods={wods}/>
           </Route>
         </Switch>
       </Router>

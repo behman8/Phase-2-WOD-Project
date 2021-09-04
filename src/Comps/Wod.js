@@ -9,9 +9,12 @@ function Wod( { wods } ) {
         return(
             <>
                 <p>{foundWorkout.workout}</p>
-                <h3>{foundWorkout.score}</h3>
-                <h2>Likes: {foundWorkout.likes}</h2>
-                <button>👍</button>
+                <h3>{foundWorkout.scoring}</h3>
+                <h2>Score: {foundWorkout.score}</h2>
+                    <input type="number"></input>
+                    <button>Add Score</button>
+                <h3>Likes: {foundWorkout.likes}</h3>
+                    <button>👍</button>
             </>
         )
     } else {
