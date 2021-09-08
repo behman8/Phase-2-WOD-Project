@@ -6,7 +6,6 @@ function Home( { wods } ) {
         
     return(
         <div>
-            <h1>Pick Your WOD</h1>
             {workouts}
         </div>
     )

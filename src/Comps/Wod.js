@@ -3,18 +3,17 @@ import { useParams, Redirect } from 'react-router-dom'
 
 function Wod( { wods } ) {
     const params = useParams();
-    const foundWorkout = wods.find(wod => wod.id === parseInt(params.id))
+    const foundWorkout = wods.find(wod => wod.id === parseInt(params.id));
 
     if (foundWorkout) {
         return(
             <>
+                <h2>Alternative Movements</h2>
+                <p>{foundWorkout.altMovements}</p>
+                <h2>Workout:</h2>
                 <p>{foundWorkout.workout}</p>
+                <h2>Scoring:</h2>
                 <h3>{foundWorkout.scoring}</h3>
-                <h2>Score: {foundWorkout.score}</h2>
-                    <input type="number"></input>
-                    <button>Add Score</button>
-                <h3>Likes: {foundWorkout.likes}</h3>
-                    <button>👍</button>
             </>
         )
     } else {

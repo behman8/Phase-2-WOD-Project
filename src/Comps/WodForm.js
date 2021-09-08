@@ -4,8 +4,7 @@ function WodForm( { submitWod } ) {
     const [formData, setFormData] = useState({
         workout: "",
         scoring: "",
-        likes: 0,
-        score: 0,
+        altMovements: "",
     });
 
     function handleChange(event) {
@@ -20,6 +19,7 @@ function WodForm( { submitWod } ) {
     return(
         <form onSubmit={handleSubmit}>
             <h1>Create Your WOD!</h1>
+            <h2>Workout:</h2>
             <textarea 
                 id="workout"
                 placeholder="Enter workout here..."
@@ -27,7 +27,7 @@ function WodForm( { submitWod } ) {
                 onChange={handleChange}
             />
             <br/>
-            <h3>Scoring</h3>
+            <h2>Scoring:</h2>
             <input 
                 id="scoring"
                 type="text"
@@ -35,6 +35,15 @@ function WodForm( { submitWod } ) {
                 value={formData.scoring}
                 onChange={handleChange}
             />
+            <br/>
+            <h2>Alternative Movements:</h2>
+            <textarea 
+                id="altMovements"
+                placeholder="Alternate movements..."
+                value={formData.altMovements} 
+                onChange={handleChange}
+            />
+            <br/>
             <button id="submit-button" type="submit">Submit WOD</button>
         </form>
     )

@@ -9,13 +9,14 @@ function WodDescription( { wod } ) {
     };
 
     return(
-        <>
+        <div className="WodDescription">
+            <h2>Workout:</h2>
             <p>{wod.workout}</p>
-            <h2>Score: {wod.score}</h2>
-            <h3>Likes: {wod.likes}</h3>
+            <h2>Scoring:</h2>
+            <p>{wod.scoring}</p>
 
-            <button onClick={handleClick}>Add score and leave a like!</button>
-        </>
+            <button className="add-score" onClick={handleClick}>Alternative Movements</button>
+        </div>
     )
 };
 
