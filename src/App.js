@@ -19,32 +19,31 @@ function App() {
     fetch("http://localhost:3000/wods", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json", "Accepts": "application/json"
-        },
+            "Content-Type": "application/json", "Accepts": "application/json"},
         body: JSON.stringify(newWod)
     })
         .then(resp => resp.json())
-        .then(data => setWods([...data, newWod]))
+        .then(data => setWods([...wods, data]));
   };
 
 
   return (
     <div className="App">
-      <Router>
         <h1 className="header">Pick Your WOD</h1>
+        <Router>
         <Navbar />
         <Switch>
+          <Route exact path="/">
+            <Home wods={wods} />
+          </Route>
           <Route exact path="/wod/new">
             <WodForm submitWod={submitWod} />
           </Route>
           <Route exact path="/wod/:id">
             <Wod wods={wods}/>
           </Route>
-          <Route exact path="/">
-            <Home wods={wods} />
-          </Route>
         </Switch>
-      </Router>
+        </Router>
     </div>
   );
 };
