@@ -15,7 +15,7 @@ function WodDescription( { wod } ) {
             <h2>Scoring:</h2>
             <p>{wod.scoring}</p>
 
-            <button className="add-score" onClick={handleClick}>Alternative Movements</button>
+            <button className="altmoves" onClick={handleClick}>Alternative Movements</button>
         </div>
     )
 };

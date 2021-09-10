@@ -13,7 +13,7 @@ function WodForm( { submitWod } ) {
     };
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
             <h1>Create Your WOD!</h1>
             <h2>Workout:</h2>
             <textarea 
